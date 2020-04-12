@@ -1,17 +1,17 @@
 package ru.gushchin.ivt.demo;
 
-public class ReturnDecorator extends Decorator {
-    public ReturnDecorator(ReturnInterface component) {
-        super(component);
-    }
+import org.springframework.stereotype.Component;
+
+@Component("ReturnDecorator")
+public class ReturnDecorator implements ReturnInterface{
 
     @Override
-    public StringBuilder sendBackLine() {
-        String[] words = String.valueOf(component.sendBackLine()).split(" ");
+    public String sendBackLine(String line) {
         StringBuilder a = new StringBuilder();
+        String[] words= line.split(" ");
         int b = 1;
-        for (String line : words){
-            if ("return".equals(line)){
+        for (String ln : words){
+            if ("return".equals(ln)){
                 break;
             }
             b++;
@@ -31,6 +31,6 @@ public class ReturnDecorator extends Decorator {
             a.append(" ");
             a.append(ln);
         }
-        return a;
+        return a.toString();
     }
 }

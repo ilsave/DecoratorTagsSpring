@@ -5,24 +5,20 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("FinalDecorator")
-public class FinalDecorator extends Decorator {
-
-    @Autowired
-    public FinalDecorator(@Qualifier("PrivateDecorator")ReturnInterface component) {
-        super(component);
-    }
+public class FinalDecorator implements ReturnInterface{
 
     /*
     Все последующие декораторы работают по идентичному принципу
      */
 
     @Override
-    public StringBuilder sendBackLine() {
-        String[] words = String.valueOf(component.sendBackLine()).split(" ");
+    public String sendBackLine(String line) {
+        System.out.println("im in final");
         StringBuilder a = new StringBuilder();
+        String[] words= line.split(" ");
         int b = 1; // Определяет позицию сразу за искомым словом
-        for (String line : words){
-            if ("final".equals(line)){
+        for (String ln : words){
+            if ("final".equals(ln)){
                 break;
             }
             b++;
@@ -41,7 +37,7 @@ public class FinalDecorator extends Decorator {
             a.append(" ");
             a.append(ln);
         }
-        return a;
+        return a.toString();
     }
 }
 

@@ -7,15 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component("ReturnClass")
 public class ReturnClass implements ReturnInterface{
-    StringBuilder line; // Строка из файла
-
-    @Autowired
-    public ReturnClass(@Qualifier StringBuilder line) {
-        this.line = line;
-    } // Конструктор, инициализирует строку
+    String line; // Строка из файла
 
     @Override
-    public StringBuilder sendBackLine() {
+    public String sendBackLine(String line) {
         return line;
     } // Возвращает строку
 }

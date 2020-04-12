@@ -4,18 +4,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("ProtectedDecorator")
-public class ProtectedDecorator extends Decorator {
-    public ProtectedDecorator(@Qualifier("PrivateDecorator") ReturnInterface component) {
-        super(component);
-    }
+public class ProtectedDecorator implements ReturnInterface{
 
     @Override
-    public StringBuilder sendBackLine() {
-        String[] words = String.valueOf(component.sendBackLine()).split(" ");
+    public String sendBackLine(String line) {
         StringBuilder a = new StringBuilder();
+        String[] words= line.split(" ");
         int b = 1;
-        for (String line : words){
-            if ("protected".equals(line)){
+        for (String ln : words){
+            if ("protected".equals(ln)){
                 break;
             }
             b++;
@@ -35,6 +32,6 @@ public class ProtectedDecorator extends Decorator {
             a.append(" ");
             a.append(ln);
         }
-        return a;
+        return a.toString();
     }
 }

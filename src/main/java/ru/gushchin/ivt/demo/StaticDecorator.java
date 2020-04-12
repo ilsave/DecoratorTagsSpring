@@ -6,20 +6,16 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component("StaticDecorator")
-public class StaticDecorator extends Decorator {
+public class StaticDecorator implements ReturnInterface{
 
-    @Autowired
-    public StaticDecorator(@Qualifier("VoidDecorator") ReturnInterface component) {
-        super(component);
-    }
 
     @Override
-    public StringBuilder sendBackLine() {
-        String[] words = String.valueOf(component.sendBackLine()).split(" ");
+    public String sendBackLine(String line) {
         StringBuilder a = new StringBuilder();
+        String[] words= line.split(" ");
         int b = 1;
-        for (String line : words){
-            if ("static".equals(line)){
+        for (String ln : words){
+            if ("static".equals(ln)){
                 break;
             }
             b++;
@@ -38,6 +34,6 @@ public class StaticDecorator extends Decorator {
             a.append(" ");
             a.append(ln);
         }
-        return a;
+        return a.toString();
     }
 }

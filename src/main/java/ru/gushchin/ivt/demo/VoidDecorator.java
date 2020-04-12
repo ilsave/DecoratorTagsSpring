@@ -5,20 +5,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("VoidDecorator")
-public class VoidDecorator extends Decorator {
+public class VoidDecorator implements ReturnInterface {
 
-    @Autowired
-    public VoidDecorator(@Qualifier("ReturnClass") ReturnInterface component) {
-        super(component);
-    }
 
     @Override
-    public StringBuilder sendBackLine() {
-        String[] words = String.valueOf(component.sendBackLine()).split(" ");
+    public String sendBackLine(String line) {
         StringBuilder a = new StringBuilder();
+        String[] words= line.split(" \\s");
         int b = 1;
-        for (String line : words){
-            if ("void".equals(line)){
+        for (String ln : words){
+            if ("void".equals(ln)){
                 break;
             }
             b++;
@@ -37,6 +33,7 @@ public class VoidDecorator extends Decorator {
             a.append(" ");
             a.append(ln);
         }
-        return a;
+
+        return a.toString();
     }
 }
