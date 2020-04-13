@@ -13,7 +13,6 @@ public class FinalDecorator implements ReturnInterface{
 
     @Override
     public String sendBackLine(String line) {
-        System.out.println("im in final");
         StringBuilder a = new StringBuilder();
         String[] words= line.split(" ");
         int b = 1; // Определяет позицию сразу за искомым словом
