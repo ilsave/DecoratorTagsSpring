@@ -25,12 +25,12 @@ public class FinalDecorator implements ReturnInterface{
         int i = 0; // Определяет позицию прямо перед искомым словом
         for (String ln : words){
             if(b - i == 1){
-                a.append("<i><strong> <font color='purple' face='Compact'>"); // Теги вставляеются передм словом
+                a.append(" <i><strong> <font color='purple' face='Compact'> "); // Теги вставляеются передм словом
             }
             i++;
             if ("final".equals(ln)){
                 a.append(ln);
-                a.append("</font> </strong></i>"); // Теги вставляются после слова
+                a.append(" </font> </strong></i> "); // Теги вставляются после слова
                 continue;
             }
             a.append(" ");

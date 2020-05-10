@@ -95,7 +95,7 @@ public class FileManager {
             for (String line1 : list){
                 pw.print("<br>");
                 // Применяем все возможные декораторы для строки и записываем в файл
-                pw.print(ReturnDecorator.sendBackLine((VoidDecorator.sendBackLine(StaticDecorator.sendBackLine(ReturnDecorator.sendBackLine(PublicDecorator.sendBackLine(ProtectedDecorator.sendBackLine(PrivateDecorator.sendBackLine(FinalDecorator.sendBackLine(line1))))))))));
+                pw.print(VoidDecorator.sendBackLine(StaticDecorator.sendBackLine(ReturnDecorator.sendBackLine(PublicDecorator.sendBackLine(ProtectedDecorator.sendBackLine(PrivateDecorator.sendBackLine(FinalDecorator.sendBackLine(line1))))))));
                 pw.println("</br>");
             }
             pw.print(line3); // Вторая часть разметки пишется в файл

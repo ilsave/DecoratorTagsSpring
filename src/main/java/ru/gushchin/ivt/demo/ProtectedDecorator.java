@@ -21,12 +21,12 @@ public class ProtectedDecorator implements ReturnInterface{
         for (String ln : words){
 
             if(b - i == 1){
-                a.append("<i><strong> <font color='orange' face='Compact'>");
+                a.append(" <i><strong> <font color='orange' face='Compact'> ");
             }
             i++;
             if ("protected".equals(ln)){
                 a.append(ln);
-                a.append("</font> </strong></i>");
+                a.append(" </font> </strong></i> ");
                 continue;
             }
             a.append(" ");

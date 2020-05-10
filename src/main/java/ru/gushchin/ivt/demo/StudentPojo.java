@@ -23,13 +23,13 @@ public class StudentPojo {
     public String getNameOfUni() {
         return nameOfUni;
     }
-    public void setName(String name) {
+    public  void setName(String name) {
         this.name = name;
     }
-    public void setOtherPersonalInfo(String otherPersonalInfo) {
+    public  void setOtherPersonalInfo(String otherPersonalInfo) {
         this.otherPersonalInfo = otherPersonalInfo;
     }
-    public void setNameOfUni(String nameOfUni) {
+    public  void setNameOfUni(String nameOfUni) {
         this.nameOfUni = nameOfUni;
     }
     static  void printInfo(){ System.out.println("Info"); }

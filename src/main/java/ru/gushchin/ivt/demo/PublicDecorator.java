@@ -22,12 +22,12 @@ public class PublicDecorator implements ReturnInterface{
         int i = 0;
         for (String ln : words){
             if(b - i == 1){
-                a.append("<i><strong> <font color='green' face='Compact'>");
+                a.append(" <i><strong> <font color='green' face='Compact'> ");
             }
             i++;
             if ("public".equals(ln)){
                 a.append(ln);
-                a.append("</font></strong></i>");
+                a.append(" </font></strong></i> ");
                 continue;
             }
             a.append(" ");

@@ -20,12 +20,12 @@ public class ReturnDecorator implements ReturnInterface{
         int i = 0;
         for (String ln : words){
             if(b - i == 1){
-                a.append("<i><strong> <font color='navy' face='Compact'>");
+                a.append(" <i><strong> <font color='navy' face='Compact'> ");
             }
             i++;
             if ("return".equals(ln)){
                 a.append(ln);
-                a.append("</font></strong></i>");
+                a.append(" </font></strong></i> ");
                 continue;
             }
             a.append(" ");

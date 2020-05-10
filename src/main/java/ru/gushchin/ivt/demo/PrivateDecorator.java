@@ -21,12 +21,12 @@ public class PrivateDecorator implements ReturnInterface{
         int i =0;
         for (String ln : words){
             if(b - i == 1){
-                a.append("<i><strong><font color='red' face='Compact'>");
+                a.append(" <i><strong><font color='red' face='Compact'> ");
             }
             i++;
             if ("private".equals(ln)){
                 a.append(ln);
-                a.append("</font></strong></i>");
+                a.append(" </font></strong></i> ");
                 continue;
             }
             a.append(" ");
